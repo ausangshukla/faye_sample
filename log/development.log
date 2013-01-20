@@ -1,0 +1,3571 @@
+
+
+Started GET "/merchant-cash-advance/" for 127.0.0.1 at 2012-07-09 05:41:42 -0400
+
+ActionController::RoutingError (No route matches [GET] "/merchant-cash-advance"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (11.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 05:41:45 -0400
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 399ms
+
+ActiveRecord::StatementInvalid (Could not find table 'messages'):
+  app/controllers/messages_controller.rb:5:in `index'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.1ms)
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (40.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (23.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMessages (20120709073529)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120709073529')
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("messages")
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 05:44:19 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (258.6ms)
+Completed 500 Internal Server Error in 315ms
+
+ActionView::Template::Error (undefined method `title' for #<#<Class:0xa883d30>:0xa882610>):
+    1: <% title "Chat" %>
+    2: 
+    3: <ul id="chat">
+    4:   <%= render @messages %>
+  app/views/messages/index.html.erb:1:in `_app_views_messages_index_html_erb___615061999_88362620'
+  app/controllers/messages_controller.rb:7:in `index'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (24.0ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (53.4ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 05:44:40 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (8.0ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered collection (0.0ms)
+  Rendered messages/index.html.erb within layouts/application (80.0ms)
+Compiled messages.css  (134ms)  (pid 4119)
+Compiled scaffolds.css  (69ms)  (pid 4119)
+Compiled application.css  (458ms)  (pid 4119)
+Compiled jquery.js  (12ms)  (pid 4119)
+Compiled jquery_ujs.js  (1ms)  (pid 4119)
+Compiled faye.js  (0ms)  (pid 4119)
+Compiled messages.js  (550ms)  (pid 4119)
+Compiled application.js  (863ms)  (pid 4119)
+Completed 200 OK in 1744ms (Views: 1734.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 05:44:42 -0400
+Served asset /application.css - 200 OK (170ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /messages.css - 200 OK (18ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /jquery.js - 200 OK (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /jquery_ujs.js - 200 OK (22ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /messages.js - 200 OK (17ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /faye.js - 200 OK (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /application.js - 200 OK (47ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 05:44:43 -0400
+Served asset /defaults.js - 404 Not Found (12ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 05:54:32 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered collection (0.0ms)
+  Rendered messages/index.html.erb within layouts/application (33.7ms)
+Compiled faye.js  (0ms)  (pid 4119)
+Compiled application.js  (18ms)  (pid 4119)
+Completed 200 OK in 534ms (Views: 524.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /messages.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /jquery.js - 200 OK (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /faye.js - 200 OK (38ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /application.js - 200 OK (65ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 05:54:33 -0400
+Served asset /defaults.js - 404 Not Found (24ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:54:38 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: content):
+  app/controllers/messages_controller.rb:43:in `new'
+  app/controllers/messages_controller.rb:43:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:54:40 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: content):
+  app/controllers/messages_controller.rb:43:in `new'
+  app/controllers/messages_controller.rb:43:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:54:42 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+Completed 500 Internal Server Error in 9ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: content):
+  app/controllers/messages_controller.rb:43:in `new'
+  app/controllers/messages_controller.rb:43:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.7ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.9ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:55:17 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (103.2ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Hi there"], ["created_at", Mon, 09 Jul 2012 09:55:17 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 09:55:17 UTC +00:00]]
+  [1m[35m (20.9ms)[0m  commit transaction
+  Rendered messages/create.js.erb (4.3ms)
+Completed 500 Internal Server Error in 163ms
+
+ActionView::Template::Error (Missing partial messages/message with {:locale=>[:en], :formats=>[:js, :html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/thimmaiah/work/misc/faye/app/views"
+):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render(@message) %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/views/messages/create.js.erb:2:in `block in _app_views_messages_create_js_erb__794253879_97697980'
+  app/helpers/application_helper.rb:3:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__794253879_97697980'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.1ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:58:06 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Hi there"], ["created_at", Mon, 09 Jul 2012 09:58:06 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 09:58:06 UTC +00:00]]
+  [1m[36m (34.2ms)[0m  [1mcommit transaction[0m
+  Rendered messages/create.js.erb (20.7ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (undefined local variable or method `partial' for #<#<Class:0xb91cf84>:0xac023d0>):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render partial=>'show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/views/messages/create.js.erb:2:in `block in _app_views_messages_create_js_erb__794253879_90178560'
+  app/helpers/application_helper.rb:3:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__794253879_90178560'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.3ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.9ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 05:59:04 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Hi there"], ["created_at", Mon, 09 Jul 2012 09:59:04 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 09:59:04 UTC +00:00]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  Rendered messages/create.js.erb (4.2ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (Missing partial messages/show, application/show with {:locale=>[:en], :formats=>[:js, :html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/thimmaiah/work/misc/faye/app/views"
+):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/views/messages/create.js.erb:2:in `block in _app_views_messages_create_js_erb__794253879_90171300'
+  app/helpers/application_helper.rb:3:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__794253879_90171300'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.7ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.9ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:01:24 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hi there"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Hi there"], ["created_at", Mon, 09 Jul 2012 10:01:24 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:01:24 UTC +00:00]]
+  [1m[36m (28.8ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.7ms)
+  Rendered messages/create.js.erb (45.4ms)
+Completed 200 OK in 84ms (Views: 49.2ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 06:01:48 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (Missing partial messages/message with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/thimmaiah/work/misc/faye/app/views"
+):
+    1: <ul id="chat">
+    2:   <%= render @messages %>
+    3: </ul>
+    4: 
+    5: <%= form_for Message.new, :remote => true do |f| %>
+  app/views/messages/index.html.erb:2:in `_app_views_messages_index_html_erb___615061999_89097670'
+  app/controllers/messages_controller.rb:7:in `index'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.3ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.3ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (61.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 107ms (Views: 103.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /messages.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 06:02:39 -0400
+Served asset /defaults.js - 404 Not Found (20ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.5ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:02:49 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Hello"}, "commit"=>"Send"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Hello"], ["created_at", Mon, 09 Jul 2012 10:02:49 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:02:49 UTC +00:00]]
+  [1m[35m (19.3ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (11.5ms)
+Completed 200 OK in 39ms (Views: 15.6ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:03:06 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Woeld"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Woeld"], ["created_at", Mon, 09 Jul 2012 10:03:06 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:03:06 UTC +00:00]]
+  [1m[36m (30.1ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (11.3ms)
+Completed 200 OK in 54ms (Views: 14.4ms | ActiveRecord: 31.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:03:12 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"What is going on ?"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What is going on ?"], ["created_at", Mon, 09 Jul 2012 10:03:12 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:03:12 UTC +00:00]]
+  [1m[35m (19.2ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (9.7ms)
+Completed 200 OK in 38ms (Views: 15.2ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:03:37 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"not much"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "not much"], ["created_at", Mon, 09 Jul 2012 10:03:37 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:03:37 UTC +00:00]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (10.8ms)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-07-09 06:04:31 -0400
+Served asset /rails.png - 200 OK (30ms)
+
+
+Started GET "/merchant-cash-advance/" for 127.0.0.1 at 2012-07-09 06:04:36 -0400
+
+ActionController::RoutingError (No route matches [GET] "/merchant-cash-advance"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 06:04:39 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (8.2ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 48.4ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 06:04:39 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /scaffolds.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /faye.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 06:04:40 -0400
+Served asset /defaults.js - 404 Not Found (28ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.1ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:04:49 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"What more can be done"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "What more can be done"], ["created_at", Mon, 09 Jul 2012 10:04:49 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:04:49 UTC +00:00]]
+  [1m[36m (27.3ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (11.4ms)
+Completed 200 OK in 58ms (Views: 15.2ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 06:11:27 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 839ms (Views: 470.6ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /messages.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /scaffolds.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /jquery.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /faye.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /messages.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /application.js - 304 Not Modified (233ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 06:11:30 -0400
+Served asset /defaults.js - 404 Not Found (23ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-07-09 06:11:49 -0400
+Served asset /rails.png - 304 Not Modified (6ms)
+
+
+Started GET "/merchant-cash-advance/" for 127.0.0.1 at 2012-07-09 06:11:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/merchant-cash-advance"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 06:11:52 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.8ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 123ms (Views: 120.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 06:11:53 -0400
+Served asset /defaults.js - 404 Not Found (25ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.0ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:12:01 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"this is a test"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (92.6ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "this is a test"], ["created_at", Mon, 09 Jul 2012 10:12:01 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:12:01 UTC +00:00]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.8ms)
+  Rendered messages/create.js.erb (67.7ms)
+Completed 200 OK in 187ms (Views: 71.4ms | ActiveRecord: 109.6ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:12:22 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"with token now"}, "commit"=>"Send"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "with token now"], ["created_at", Mon, 09 Jul 2012 10:12:22 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:12:22 UTC +00:00]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (12.0ms)
+Completed 200 OK in 29ms (Views: 16.0ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 06:12:28 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9WRg9C3EyoC+5+nmV081QLUXhOJLuXXspfziJviRaxk=", "message"=>{"content"=>"Token recvd"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Token recvd"], ["created_at", Mon, 09 Jul 2012 10:12:28 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 10:12:28 UTC +00:00]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (13.7ms)
+Completed 200 OK in 43ms (Views: 16.9ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 07:40:34 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (34.9ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (195.5ms)
+Completed 200 OK in 979ms (Views: 826.5ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 07:40:36 -0400
+Served asset /defaults.js - 404 Not Found (17ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-07-09 10:58:24 -0400
+Served asset /rails.png - 304 Not Modified (59ms)
+
+
+Started GET "/merchant-cash-advance/" for 127.0.0.1 at 2012-07-09 10:58:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/merchant-cash-advance"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (127.6ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 10:58:28 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (99.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 1015ms (Views: 608.3ms | ActiveRecord: 99.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /application.css - 304 Not Modified (46ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /jquery.js - 304 Not Modified (70ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /faye.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /messages.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 10:58:30 -0400
+Served asset /defaults.js - 404 Not Found (372ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 10:58:35 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 10:58:42 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"Test redis"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (24.0ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Test redis"], ["created_at", Mon, 09 Jul 2012 14:58:42 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 14:58:42 UTC +00:00]]
+  [1m[35m (24.1ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (193.3ms)
+Completed 500 Internal Server Error in 261ms
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__7289271_85647950'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.3ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (101.1ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 11:00:28 -0400
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 1198ms (Views: 756.3ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 11:00:32 -0400
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /messages.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /scaffolds.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /jquery.js - 304 Not Modified (251ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /faye.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /messages.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /application.js - 304 Not Modified (46ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 11:00:33 -0400
+Served asset /defaults.js - 404 Not Found (19ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:01:02 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"TEst"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (45.9ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "TEst"], ["created_at", Mon, 09 Jul 2012 15:01:02 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:01:02 UTC +00:00]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.9ms)
+  Rendered messages/create.js.erb (95.1ms)
+Completed 500 Internal Server Error in 162ms
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb___877254571_89062860'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:01:03 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"TEst"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (13.1ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "TEst"], ["created_at", Mon, 09 Jul 2012 15:01:03 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:01:03 UTC +00:00]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (4.9ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb___877254571_89062860'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.6ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:01:31 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"TEst"}, "commit"=>"Send"}
+  [1m[35m (10.4ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "TEst"], ["created_at", Mon, 09 Jul 2012 15:01:31 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:01:31 UTC +00:00]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (47.6ms)
+Completed 200 OK in 74ms (Views: 52.3ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:02:10 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"Hello"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Hello"], ["created_at", Mon, 09 Jul 2012 15:02:10 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:02:10 UTC +00:00]]
+  [1m[36m (28.6ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (7.1ms)
+Completed 200 OK in 43ms (Views: 10.6ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-07-09 11:02:23 -0400
+Served asset /rails.png - 304 Not Modified (76ms)
+
+
+Started GET "/merchant-cash-advance/" for 127.0.0.1 at 2012-07-09 11:02:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/merchant-cash-advance"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.6ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 92ms (Views: 87.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /messages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-09 11:02:28 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-07-09 11:02:29 -0400
+Served asset /defaults.js - 404 Not Found (23ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:02:41 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"Whats up"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Whats up"], ["created_at", Mon, 09 Jul 2012 15:02:41 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:02:41 UTC +00:00]]
+  [1m[36m (15.7ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (13.0ms)
+Completed 200 OK in 49ms (Views: 16.9ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:02:46 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"This is good"}, "commit"=>"Send"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "This is good"], ["created_at", Mon, 09 Jul 2012 15:02:46 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:02:46 UTC +00:00]]
+  [1m[35m (32.4ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (14.4ms)
+Completed 200 OK in 57ms (Views: 21.2ms | ActiveRecord: 33.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:03:11 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"redis is down"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.2ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "redis is down"], ["created_at", Mon, 09 Jul 2012 15:03:11 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:03:11 UTC +00:00]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (5.8ms)
+Completed 200 OK in 30ms (Views: 9.3ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:03:52 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"Redis is bac up"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Redis is bac up"], ["created_at", Mon, 09 Jul 2012 15:03:52 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:03:52 UTC +00:00]]
+  [1m[35m (33.0ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.2ms)
+  Rendered messages/create.js.erb (20.9ms)
+Completed 200 OK in 66ms (Views: 28.5ms | ActiveRecord: 34.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:08:11 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"REdis rocks"}, "commit"=>"Send"}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "REdis rocks"], ["created_at", Mon, 09 Jul 2012 15:08:11 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:08:11 UTC +00:00]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.2ms)
+  Rendered messages/create.js.erb (15.4ms)
+Completed 200 OK in 35ms (Views: 20.0ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:08:23 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"Yup it does"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Yup it does"], ["created_at", Mon, 09 Jul 2012 15:08:23 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:08:23 UTC +00:00]]
+  [1m[35m (31.7ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (11.7ms)
+Completed 200 OK in 51ms (Views: 15.1ms | ActiveRecord: 32.6ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2012-07-09 11:10:24 -0400
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhBftOWPMXjMVpSKAcAc4RdEDzSulIgleX36c8/oHak=", "message"=>{"content"=>"bus karo"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "bus karo"], ["created_at", Mon, 09 Jul 2012 15:10:24 UTC +00:00], ["updated_at", Mon, 09 Jul 2012 15:10:24 UTC +00:00]]
+  [1m[36m (18.6ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (12.7ms)
+Completed 200 OK in 39ms (Views: 16.2ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/rails.png" for 192.168.2.100 at 2013-01-19 01:57:34 -0500
+Served asset /rails.png - 200 OK (58ms)
+
+
+Started GET "/messages" for 192.168.2.100 at 2013-01-19 01:57:48 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (8.8ms)
+Compiled faye.js  (0ms)  (pid 10966)
+Compiled application.js  (11ms)  (pid 10966)
+Completed 200 OK in 1052ms (Views: 600.4ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.2.100 at 2013-01-19 01:57:49 -0500
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/messages.css?body=1" for 192.168.2.100 at 2013-01-19 01:57:49 -0500
+Served asset /messages.css - 200 OK (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.2.100 at 2013-01-19 01:57:49 -0500
+Served asset /scaffolds.css - 200 OK (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 192.168.2.100 at 2013-01-19 01:57:49 -0500
+Served asset /messages.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.2.100 at 2013-01-19 01:57:49 -0500
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.2.100 at 2013-01-19 01:57:50 -0500
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/faye.js?body=1" for 192.168.2.100 at 2013-01-19 01:57:50 -0500
+Served asset /faye.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.2.100 at 2013-01-19 01:57:50 -0500
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/defaults.js" for 192.168.2.100 at 2013-01-19 01:57:50 -0500
+Served asset /defaults.js - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/messages" for 192.168.2.100 at 2013-01-19 01:57:57 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VX8U5UWBbWeiFqziatwwt9Hpp2oEySKGFgFg2b+jcMs=", "message"=>{"content"=>"Hello"}, "commit"=>"Send"}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (97.1ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Hello"], ["created_at", Sat, 19 Jan 2013 06:57:57 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 06:57:57 UTC +00:00]]
+  [1m[35m (48.4ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.0ms)
+  Rendered messages/create.js.erb (120.1ms)
+Completed 200 OK in 341ms (Views: 190.3ms | ActiveRecord: 146.0ms)
+
+
+Started POST "/messages" for 192.168.2.100 at 2013-01-19 01:58:05 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VX8U5UWBbWeiFqziatwwt9Hpp2oEySKGFgFg2b+jcMs=", "message"=>{"content"=>"how are you"}, "commit"=>"Send"}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "how are you"], ["created_at", Sat, 19 Jan 2013 06:58:05 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 06:58:05 UTC +00:00]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (4.1ms)
+Completed 200 OK in 18ms (Views: 6.5ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-01-19 02:00:12 -0500
+Served asset /rails.png - 200 OK (0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:00:19 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (6.7ms)
+Compiled faye.js  (0ms)  (pid 10966)
+Compiled application.js  (7ms)  (pid 10966)
+Completed 200 OK in 193ms (Views: 186.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /messages.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /faye.js - 200 OK (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /defaults.js - 404 Not Found (17ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /jquery.js - 200 OK (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:00:20 -0500
+Served asset /application.js - 200 OK (46ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 02:00:27 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"Test"}, "commit"=>"Send"}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "Test"], ["created_at", Sat, 19 Jan 2013 07:00:27 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 07:00:27 UTC +00:00]]
+  [1m[36m (24.9ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (10.8ms)
+Completed 200 OK in 44ms (Views: 13.5ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:01:08 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (5.6ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 73ms (Views: 65.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:01:09 -0500
+Served asset /defaults.js - 404 Not Found (21ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 02:01:14 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"T2"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "T2"], ["created_at", Sat, 19 Jan 2013 07:01:14 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 07:01:14 UTC +00:00]]
+  [1m[36m (42.6ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (9.8ms)
+Completed 200 OK in 58ms (Views: 12.4ms | ActiveRecord: 43.3ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.4ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (6.6ms)
+Compiled faye.js  (11ms)  (pid 10966)
+Compiled application.js  (4ms)  (pid 10966)
+Completed 200 OK in 244ms (Views: 240.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /faye.js - 200 OK (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:02:01 -0500
+Served asset /defaults.js - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:02:06 -0500
+Served asset /defaults.js - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.8ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /faye.js - 200 OK (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /messages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/defaults.js" for 192.168.2.100 at 2013-01-19 02:04:49 -0500
+Served asset /defaults.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:17:43 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (10.2ms)
+Compiled faye.js  (0ms)  (pid 10966)
+Compiled broadcaster.js  (493ms)  (pid 10966)
+Compiled application.js  (545ms)  (pid 10966)
+Completed 200 OK in 1059ms (Views: 1031.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /messages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /broadcaster.js - 200 OK (10ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /faye.js - 200 OK (8ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:17:44 -0500
+Served asset /application.js - 200 OK (33ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:17:45 -0500
+Served asset /defaults.js - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:18:09 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (17.9ms)
+Compiled faye.js  (0ms)  (pid 10966)
+Compiled application.js  (22ms)  (pid 10966)
+Completed 200 OK in 280ms (Views: 277.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /messages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /faye.js - 200 OK (6ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /broadcaster.js - 200 OK (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /application.js - 200 OK (84ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:18:10 -0500
+Served asset /defaults.js - 404 Not Found (6ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:18:34 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (12.1ms)
+Compiled broadcaster.js  (27ms)  (pid 10966)
+Compiled application.js  (8ms)  (pid 10966)
+Completed 200 OK in 348ms (Views: 344.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /messages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /broadcaster.js - 200 OK (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /faye.js - 200 OK (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /application.js - 200 OK (38ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:18:35 -0500
+Served asset /defaults.js - 404 Not Found (10ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (3.3ms)
+Compiled broadcaster.js  (9ms)  (pid 10966)
+Compiled application.js  (5ms)  (pid 10966)
+Completed 200 OK in 134ms (Views: 131.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /messages.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /broadcaster.js - 200 OK (4ms)
+
+
+Started GET "/assets/faye.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /faye.js - 200 OK (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /messages.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /application.js - 200 OK (15ms)
+
+
+Started GET "/assets/defaults.js" for 192.168.2.100 at 2013-01-19 02:19:00 -0500
+Served asset /defaults.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:20:02 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (12.3ms)
+Compiled application.js  (12ms)  (pid 10966)
+Completed 200 OK in 158ms (Views: 142.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:20:02 -0500
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:20:02 -0500
+Served asset /messages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /jquery.js - 200 OK (149ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /broadcaster.js - 200 OK (3ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /faye.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /application.js - 200 OK (24ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:20:03 -0500
+Served asset /defaults.js - 404 Not Found (10ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 02:20:40 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A1"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "A1"], ["created_at", Sat, 19 Jan 2013 07:20:40 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 07:20:40 UTC +00:00]]
+  [1m[35m (28.4ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (9.7ms)
+Completed 200 OK in 48ms (Views: 12.1ms | ActiveRecord: 29.3ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 02:20:47 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A2"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "A2"], ["created_at", Sat, 19 Jan 2013 07:20:47 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 07:20:47 UTC +00:00]]
+  [1m[36m (54.2ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (9.4ms)
+Completed 200 OK in 71ms (Views: 11.4ms | ActiveRecord: 54.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.9ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (16.1ms)
+Compiled faye.js  (0ms)  (pid 10966)
+Compiled application.js  (13ms)  (pid 10966)
+Completed 200 OK in 177ms (Views: 170.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /messages.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /jquery.js - 200 OK (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /broadcaster.js - 200 OK (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /faye.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /application.js - 200 OK (179ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 02:22:39 -0500
+Served asset /defaults.js - 404 Not Found (32ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 02:22:50 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A3"}, "commit"=>"Send"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "A3"], ["created_at", Sat, 19 Jan 2013 07:22:50 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 07:22:50 UTC +00:00]]
+  [1m[36m (16.6ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (9.7ms)
+Completed 200 OK in 34ms (Views: 12.1ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 08:16:18 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (969.2ms)
+Compiled faye.js  (1ms)  (pid 3046)
+Compiled application.js  (4ms)  (pid 3046)
+Completed 200 OK in 7576ms (Views: 6730.9ms | ActiveRecord: 59.2ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /defaults.js - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:41:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:45:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/faye_server.js" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /jquery.js - 304 Not Modified (128ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /broadcaster.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 08:17:09 -0500
+Served asset /faye.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 08:17:10 -0500
+Served asset /application.js - 304 Not Modified (50ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 08:17:10 -0500
+Served asset /messages.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 08:17:10 -0500
+Served asset /scaffolds.css - 304 Not Modified (20ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:17:20 -0500
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:17:31 -0500
+
+
+Started GET "/faye_server/euysqjcu9ey0f2agmkqrzi9mw" for 127.0.0.1 at 2013-01-19 08:17:31 -0500
+
+ActionController::RoutingError (No route matches [GET] "/faye_server/euysqjcu9ey0f2agmkqrzi9mw"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:41:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:45:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/faye_server.js" for 127.0.0.1 at 2013-01-19 08:18:28 -0500
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:18:35 -0500
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 08:19:09 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A4"}, "commit"=>"Send"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (83.7ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "A4"], ["created_at", Sat, 19 Jan 2013 13:19:09 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 13:19:09 UTC +00:00]]
+  [1m[35m (141.7ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.5ms)
+  Rendered messages/create.js.erb (144.6ms)
+Completed 500 Internal Server Error in 377ms
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__1021537194_80729600'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.7ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.0ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:19:38 -0500
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 95ms (Views: 61.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /broadcaster.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 08:20:14 -0500
+Served asset /defaults.js - 404 Not Found (14ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:41:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:45:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/faye_server.js" for 127.0.0.1 at 2013-01-19 08:20:15 -0500
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:20:18 -0500
+
+
+Started GET "/faye_server/1uc257q6udn687bvv75jet8mo" for 127.0.0.1 at 2013-01-19 08:20:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/faye_server/1uc257q6udn687bvv75jet8mo"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:41:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:45:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:20:18 -0500
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 08:20:24 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A5"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "A5"], ["created_at", Sat, 19 Jan 2013 13:20:24 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 13:20:24 UTC +00:00]]
+  [1m[35m (56.1ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (60133.1ms)
+Completed 500 Internal Server Error in 60201ms
+
+ActionView::Template::Error (Timeout::Error):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__1021537194_80729600'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (174.6ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.2ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (211.0ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:21:24 -0500
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 08:21:24 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A5"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "A5"], ["created_at", Sat, 19 Jan 2013 13:21:24 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 13:21:24 UTC +00:00]]
+  [1m[36m (237.0ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.1ms)
+  Rendered messages/create.js.erb (60043.0ms)
+Completed 500 Internal Server Error in 60286ms
+
+ActionView::Template::Error (Timeout::Error):
+    1: <% broadcast "/messages/new" do %>
+    2: $("#chat").append("<%= escape_javascript render :partial=>'/messages/show' %>");
+    3: <% end %>
+    4: $("#new_message")[0].reset();
+  app/helpers/application_helper.rb:5:in `broadcast'
+  app/views/messages/create.js.erb:1:in `_app_views_messages_create_js_erb__1021537194_80729600'
+  app/controllers/messages_controller.rb:45:in `create'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.9ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:22:25 -0500
+
+ActionController::RoutingError (No route matches [POST] "/faye_server"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:41:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  faye-websocket (0.4.5) lib/faye/adapters/thin.rb:45:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/faye_server" for 127.0.0.1 at 2013-01-19 08:23:00 -0500
+
+ActionController::RoutingError (No route matches [POST] "/faye_server"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 08:23:03 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (4.7ms)
+Compiled faye.js  (0ms)  (pid 3405)
+Compiled application.js  (4ms)  (pid 3405)
+Completed 200 OK in 496ms (Views: 335.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /messages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /broadcaster.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /faye.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 08:23:04 -0500
+Served asset /defaults.js - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.5ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 61ms (Views: 46.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /broadcaster.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 08:23:35 -0500
+Served asset /defaults.js - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 08:23:45 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmKxwA4xC8VsiAk1nfiEoJIbRcciKyhqoWL0qvbMT6g=", "message"=>{"content"=>"A6"}, "commit"=>"Send"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (31.8ms)[0m  INSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)  [["content", "A6"], ["created_at", Sat, 19 Jan 2013 13:23:45 UTC +00:00], ["updated_at", Sat, 19 Jan 2013 13:23:45 UTC +00:00]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  Rendered messages/_show.html.erb (0.5ms)
+  Rendered messages/create.js.erb (15.0ms)
+Completed 200 OK in 62ms (Views: 17.5ms | ActiveRecord: 40.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:08:52 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (15.1ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (367.6ms)
+Completed 200 OK in 1554ms (Views: 1122.5ms | ActiveRecord: 54.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /messages.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /scaffolds.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/broadcaster.js?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /broadcaster.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /faye.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 23:08:59 -0500
+Served asset /defaults.js - 404 Not Found (12ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:16:28 -0500
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.6ms)[0m  SELECT "messages".* FROM "messages" 
+  Rendered messages/index.html.erb within layouts/application (13.0ms)
+Compiled application.js  (4ms)  (pid 6621)
+Completed 200 OK in 527ms (Views: 522.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 23:16:29 -0500
+Served asset /defaults.js - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0.rc.4) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:22:30 -0500
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 137ms
+
+ActiveRecord::StatementInvalid (Could not find table 'messages'):
+  app/controllers/messages_controller.rb:5:in `index'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (19.9ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (162.4ms)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (23.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (33.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMessages (20120709073529)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120709073529')
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("messages")
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:24:14 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (56.3ms)
+Compiled faye.js  (0ms)  (pid 7149)
+Compiled application.js  (4ms)  (pid 7149)
+Completed 200 OK in 356ms (Views: 240.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /messages.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /faye.js - 200 OK (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /application.js - 304 Not Modified (151ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 23:24:15 -0500
+Served asset /defaults.js - 404 Not Found (9ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:27:46 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 273ms (Views: 167.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /messages.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /faye.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 23:27:48 -0500
+Served asset /defaults.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2013-01-19 23:27:54 -0500
+Processing by MessagesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x30BZjfzJoKkeXvEbclLPJeB0LtOMao0ZCsd6vnSn5U=", "message"=>{"content"=>"Test 1"}, "commit"=>"Send"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (30.8ms)[0m  [1mINSERT INTO "messages" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Test 1"], ["created_at", Sun, 20 Jan 2013 04:27:55 UTC +00:00], ["updated_at", Sun, 20 Jan 2013 04:27:55 UTC +00:00]]
+  [1m[35m (23.1ms)[0m  commit transaction
+  Rendered messages/_show.html.erb (0.6ms)
+  Rendered messages/create.js.erb (67.3ms)
+Completed 200 OK in 128ms (Views: 69.9ms | ActiveRecord: 54.0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.6ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 61.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/faye.js?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /faye.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2013-01-19 23:31:25 -0500
+Served asset /defaults.js - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.4) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.4) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.4) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.4) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.4) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.4) lib/rack/server.rb:268:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/thimmaiah/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/assets/rails.png" for 192.168.2.100 at 2013-01-20 00:41:29 -0500
+Served asset /rails.png - 200 OK (5385ms)
